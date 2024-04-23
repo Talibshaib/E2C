@@ -1,8 +1,11 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
-export default function Button({navigation}: any) {
+export default function ButtonUi({ onPress }:any) {
+  
   return (
     <TouchableOpacity
+     onPress={onPress}
+    
       style={{
         width: '85%',
         backgroundColor: '#ffff',

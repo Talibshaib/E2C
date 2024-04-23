@@ -3,11 +3,11 @@ import {Image, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 const LinearBg = ({navigation}: any) => {
-//   useEffect(() => {
-//     setTimeout(() => {
-//       navigation.navigate('Home');
-//     }, 2000);
-//   }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('GetStart');
+    }, 2000);
+  }, []);
   return (
     <View
       style={{

@@ -7,8 +7,9 @@ const Splash = ({navigation}:any) => {
       <Text>Home Screen</Text>
       <Button
         title="Go to HomeScreen"
-        onPress={() => navigation.navigate('Home')}
+        // onPress={() => navigation.navigate('Home')}
       />
+
     </View>
   )
 }

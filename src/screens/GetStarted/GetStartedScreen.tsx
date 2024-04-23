@@ -1,7 +1,11 @@
-import {Image, Text, View} from 'react-native';
-import Button from '../../components/ui/Button';
+import {Button, Image, Text, View} from 'react-native';
+import ButtonUi from '../../components/ui/ButtonUi';
 
 const GetStartedScreen = ({navigation}:any) => {
+  const handleButtonPress = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <View style={{backgroundColor: '#5178C9', flex: 1, position: 'relative'}}>
       <View style={{alignItems: 'flex-end'}}>
@@ -16,9 +20,7 @@ const GetStartedScreen = ({navigation}:any) => {
         <Text style={{fontSize: 48 , color:'#A37958' }}>Here</Text>
       </View>
       <View style={{flex:1, justifyContent:'flex-end' , alignItems:'center', marginBottom:53 }} >
-      <Button
-     onPress={() => navigation.push('Home')}
-       />
+      <ButtonUi onPress={handleButtonPress} />
       </View>
     </View>
   );

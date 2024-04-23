@@ -15,10 +15,10 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'   >
+        <Stack.Screen name="Splash" component={Splash} options={{ headerShown: false }} />
         <Stack.Screen name="GetStart" component={GetStartedScreen}  options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="linearBg" component={LinearBg}  options={{ headerShown: false }} />
-        <Stack.Screen name="Splash" component={Splash} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
