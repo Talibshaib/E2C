@@ -15,3 +15,4 @@ const Splash = ({navigation}:any) => {
 }
 
 export default Splash
+
