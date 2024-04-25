@@ -1,3 +1,4 @@
+import { DrawerActions, useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
   Image,
@@ -8,10 +9,8 @@ import {
   View,
 } from 'react-native';
 
+
 const HomeScreen = ({navigation}: any) => {
-  const ImageClick = () => {
-    navigation.navigate('linearBg');
-  };
 
   return (
     <View>
@@ -24,7 +23,7 @@ const HomeScreen = ({navigation}: any) => {
         }}>
         <View
           style={{flexDirection: 'row', gap: 23, justifyContent: 'flex-start'}}>
-          <TouchableOpacity onPress={ImageClick}>
+          <TouchableOpacity onPress={()=>  navigation.dispatch(DrawerActions.openDrawer)}>
             <Image
               source={require('../../assets/profile.jpg')}
               style={{width: 60, height: 60, borderRadius: 6}}
@@ -62,16 +61,10 @@ const HomeScreen = ({navigation}: any) => {
         {/* here add scro */}
         {/* popular courses section */}
       </View>
-      <View
-        style={{
-          marginHorizontal: 25,
-          marginTop: 16,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-        }}>
-        <ScrollButton backgroundColor="#5178C9" color="white" />
-        <ScrollButton backgroundColor="white" color="blue" />
-        <ScrollButton backgroundColor="white" color="blue" />
+      <View style={{marginHorizontal:25,marginTop:16, flexDirection:'row', justifyContent:'space-between'}} >
+        <ScrollButton backgroundColor="#5178C9" color="white" Lessons="Acedmics" />
+        <ScrollButton backgroundColor="white" color="blue" Lessons="Coding" />
+        <ScrollButton backgroundColor="white" color="blue" Lessons="Marketing" />
       </View>
       <View style={{height: '62%', padding: 23}}>
         <ScrollView>
@@ -82,6 +75,10 @@ const HomeScreen = ({navigation}: any) => {
           <View style={{flexDirection: 'row', gap: 12, marginTop: 16}}>
             <SubjectCard backgroundColor="#FEFAEF" Subject="Digital" />
             <SubjectCard backgroundColor="#F5F5FD" Subject="Coding" />
+          </View>
+          <View style={{flexDirection: 'row', gap: 12, marginTop: 16}}>
+            <SubjectCard backgroundColor="#FEF6F4" Subject="Devlopment" />
+            <SubjectCard backgroundColor="#F5FAF4" Subject="ADA" />
           </View>
           <View style={{flexDirection: 'row', gap: 12, marginTop: 16}}>
             <SubjectCard backgroundColor="#FEF6F4" Subject="Devlopment" />
@@ -124,20 +121,21 @@ export const SubjectCard = ({backgroundColor, Subject}: any) => {
   );
 };
 
-export const ScrollButton = ({backgroundColor, color}: any) => {
+export const ScrollButton = ({backgroundColor, color, Lessons}: any) => {
   return (
-    <TouchableOpacity
-      style={{
-        backgroundColor: backgroundColor,
-        width: 105,
-        padding: 9,
-        borderRadius: 6,
-        alignItems: 'center',
-        borderWidth: 0.5,
-      }}
-      delayPressIn={100}
-      delayPressOut={100}>
-      <Text style={{color: color}}>Lessons</Text>
-    </TouchableOpacity>
+    
+      <TouchableOpacity
+        style={{
+          backgroundColor: backgroundColor,
+          width: 105,
+          padding: 9,
+          borderRadius: 6,
+          alignItems: 'center',
+          borderWidth: 0.5,
+        }}
+        delayPressIn={100}
+        delayPressOut={100}>
+        <Text style={{color: color}}>{Lessons}</Text>
+      </TouchableOpacity>
   );
 };
