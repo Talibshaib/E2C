@@ -52,7 +52,7 @@ const BottomNv = ()=>{
     <Tab.Navigator
     screenOptions={{
      tabBarLabelStyle:{
-      paddingBottom:4, fontSize:12, fontWeight:'bold'
+      paddingBottom:3, fontSize:12, fontWeight:'bold'
      },
     }}
     >
@@ -63,16 +63,16 @@ const BottomNv = ()=>{
        }} />
       )
     }}} />
-    <Tab.Screen name="Splash" component={Splash}  options={{ headerShown: false,tabBarIcon:(tabnIfo)=>{
+    <Tab.Screen name="Profile" component={LinearBg}  options={{ headerShown: false,tabBarIcon:(tabnIfo)=>{
       return(
-       <Image source={require('./src/assets/home.png')} style={{width:20,height:20,
+       <Image source={require('./src/assets/profileImg.png')} style={{width:19,height:19,
         tintColor:tabnIfo.focused?'#5178C9':'black'
        }} />
       )
     } }} />
-    <Tab.Screen name="GetStart" component={GetStartedScreen}  options={{ headerShown: false , tabBarIcon:(tabnIfo)=>{
+    <Tab.Screen name="Progress" component={UserInfoScreen}  options={{ headerShown: false , tabBarIcon:(tabnIfo)=>{
       return(
-       <Image source={require('./src/assets/home.png')} style={{width:20,height:20,
+       <Image source={require('./src/assets/progressImg.png')} style={{width:20,height:20,
         tintColor:tabnIfo.focused?'#5178C9':'black'
        }} />
       )

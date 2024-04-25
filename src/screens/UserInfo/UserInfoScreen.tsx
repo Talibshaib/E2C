@@ -9,9 +9,10 @@ const UserInfoScreen = () => {
     <View style={{flex: 1}}>
       <View style={{backgroundColor: '#5178C9', height: 261}}>
         <View style={styles.ProfileContainer}>
-          <Text>Left icon</Text>
+        <Image source={require('../../assets/arrowleftIcon1.png')} style={{width:17,height:25, tintColor:'white'}} />
           <Text style={styles.ProfileText}>Profile</Text>
-          <Text>Right icon</Text>
+          <Image source={require('../../assets/settingIcon.png')} style={{width:27,height:27, tintColor:'white'}} />
+          
         </View>
         {/* second portion */}
         <View style={styles.SecondContainer}>

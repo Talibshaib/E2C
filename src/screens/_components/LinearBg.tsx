@@ -16,8 +16,9 @@ const LinearBg = ({navigation}: any) => {
         justifyContent: 'center',
       }}>
       <Image
-        source={require('../../assets/logo2.png')}
-        style={{width: 192, height: 162}}
+        source={require('../../assets/LogoOne.png')}
+        style={{width: 218, height: 162}}
+        resizeMode='contain'
       />
     </View>
   );
