@@ -122,14 +122,15 @@ export const ClickBox = () => {
   return (
     <View
       style={{
-        padding: 25,
+        // padding: 25,
+        alignItems:'center',
         width: 351,
         height: 49,
         borderWidth: 0.8,
         borderRadius: 6,
-        backgroundColor:'#5178C9'
+        // backgroundColor:'#5178C9'
       }}>
-      <Text>hii</Text>
+      <Text style={{color:'black'}}>hii</Text>
     </View>
   );
 };

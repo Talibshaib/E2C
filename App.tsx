@@ -15,7 +15,7 @@ import { Image } from 'react-native';
 const StackNav = ({navigation}:any)=>{
   const Stack = createNativeStackNavigator();
   return (
-    <Stack.Navigator initialRouteName='UserInfo'   >
+    <Stack.Navigator initialRouteName='Home'   >
     <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
     <Stack.Screen name="Splash" component={Splash} options={{ headerShown: false }} />
     <Stack.Screen name="GetStart" component={GetStartedScreen}  options={{ headerShown: false }} />
