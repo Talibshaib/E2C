@@ -4,27 +4,38 @@ import {
   TextInput,
   TouchableOpacity,
   View,
-  KeyboardAvoidingView,
-  Platform,
 } from 'react-native';
 import React from 'react';
 
-export default function LoginScreen() {
+export default function Registration() {
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={styles.main}>
+    <View style={styles.main}>
       <View style={styles.container}>
         <View style={styles.logo}>
           <Text style={styles.logo_Txt}>Easy2college</Text>
         </View>
-        <View style={styles.login}>
-          <Text style={styles.login_txt}>Login</Text>
-          <Text style={styles.login_txt_2}>
+        <View style={styles.reg}>
+          <Text style={styles.reg_txt}>Registration</Text>
+          <Text style={styles.reg_txt_2}>
             "Embark on your learning journey.welcome to your edycational realm!"
           </Text>
         </View>
         <View style={styles.input}>
+          <TextInput
+            style={styles.input_bx}
+            placeholderTextColor={'#909090'}
+            placeholder="Full Name"
+          />
+          <TextInput
+            style={styles.input_bx}
+            placeholderTextColor={'#909090'}
+            placeholder="College Name"
+          />
+          <TextInput
+            style={styles.input_bx}
+            placeholderTextColor={'#909090'}
+            placeholder="Semester"
+          />
           <TextInput
             style={styles.input_bx}
             placeholderTextColor={'#909090'}
@@ -35,20 +46,22 @@ export default function LoginScreen() {
             placeholderTextColor={'#909090'}
             placeholder="Password"
           />
-        </View>
-        <View style={styles.forgot}>
-          <Text style={styles.forgot_txt}>Forgot Password?</Text>
+          <TextInput
+            style={styles.input_bx}
+            placeholderTextColor={'#909090'}
+            placeholder="Confirm Password"
+          />
         </View>
         <View style={styles.button}>
           <TouchableOpacity style={styles.botton_bx}>
-            <Text style={styles.botton_txt}>Login</Text>
+            <Text style={styles.botton_txt}>Sign In</Text>
           </TouchableOpacity>
-          <Text style={styles.signup}>
-            Don't have an account? <Text style={styles.signup_tx}>Sign up</Text>
+          <Text style={styles.connect}>
+            Have account? <Text style={styles.connect_tx}>Connect</Text>
           </Text>
         </View>
       </View>
-    </KeyboardAvoidingView>
+    </View>
   );
 }
 
@@ -59,7 +72,6 @@ const styles = StyleSheet.create({
   },
   container: {
     margin: 25,
-    // backgroundColor: 'red',
   },
   logo: {},
   logo_Txt: {
@@ -67,21 +79,21 @@ const styles = StyleSheet.create({
     color: '#5178C9',
     fontWeight: '500',
   },
-  login: {
-    marginTop: 84,
-    gap: 8,
+  reg: {
+    marginTop: 59,
+    gap: 6,
   },
-  login_txt: {
+  reg_txt: {
     fontSize: 32,
     color: '#000000',
     fontWeight: '400',
   },
-  login_txt_2: {
+  reg_txt_2: {
     fontSize: 10,
     color: '#000000',
   },
   input: {
-    marginTop: 112,
+    marginTop: 40,
     gap: 28,
   },
   input_bx: {
@@ -94,14 +106,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#000000',
   },
-  forgot: {
-    marginTop: 9,
-    textAlign: 'right',
-  },
-  forgot_txt: {
-    color: '#A7A5A6',
-    fontSize: 14,
-  },
+
   button: {
     marginTop: 28,
     gap: 8,
@@ -118,12 +123,12 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 18,
   },
-  signup: {
+  connect: {
     textAlign: 'left',
     color: '#000000',
     fontSize: 14,
   },
-  signup_tx: {
+  connect_tx: {
     color: '#5178C9',
   },
 });

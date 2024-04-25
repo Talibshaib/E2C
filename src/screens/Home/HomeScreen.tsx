@@ -25,8 +25,8 @@ const HomeScreen = ({navigation}: any) => {
           style={{flexDirection: 'row', gap: 23, justifyContent: 'flex-start'}}>
           <TouchableOpacity onPress={()=>  navigation.dispatch(DrawerActions.openDrawer)}>
             <Image
-              source={require('../../assets/userPic.jpeg')}
-              style={{width: 60, height: 60, borderRadius: 40}}
+              source={require('../../assets/profile.jpg')}
+              style={{width: 60, height: 60, borderRadius: 6}}
               resizeMode="cover"
             />
           </TouchableOpacity>
@@ -52,7 +52,7 @@ const HomeScreen = ({navigation}: any) => {
             padding: 12,
             marginBottom: 10,
             width: '95%',
-            borderRadius: 21,
+            borderRadius: 6,
             paddingHorizontal: 21,
             opacity: 0.6,
             backgroundColor: '#668CD5',
@@ -67,7 +67,6 @@ const HomeScreen = ({navigation}: any) => {
         <ScrollButton backgroundColor="white" color="blue" Lessons="Marketing" />
       </View>
       <View style={{height: '62%', padding: 23}}>
-       
         <ScrollView>
           <View style={{flexDirection: 'row', gap: 12}}>
             <SubjectCard backgroundColor="#FEF6F4" Subject="DSA" />
