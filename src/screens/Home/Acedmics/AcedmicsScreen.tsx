@@ -27,7 +27,7 @@ const AcedmicsScreen = () => {
               gap: 12,
             }}>
             <View>
-              <Text style={styles.userName}>Physics</Text>
+              <Text style={styles.userName}>Chemestry</Text>
              
             </View>
            
