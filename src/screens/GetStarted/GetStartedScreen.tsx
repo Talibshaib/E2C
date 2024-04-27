@@ -3,7 +3,7 @@ import ButtonUi from '../../components/ui/ButtonUi';
 
 const GetStartedScreen = ({navigation}:any) => {
   const handleButtonPress = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Login');
   };
 
   return (

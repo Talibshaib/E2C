@@ -1,94 +1,109 @@
-import 'react-native-gesture-handler';
-import { NavigationContainer, useNavigation,DrawerActions } from '@react-navigation/native';
+import React from 'react';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './src/screens/Home/HomeScreen';
-import Splash from './src/screens/Splash/Splash';
-import LinearBg from './src/screens/_components/LinearBg';
-import GetStartedScreen from './src/screens/GetStarted/GetStartedScreen';
-import { DrawerContent, createDrawerNavigator } from '@react-navigation/drawer';
-import DrawerPortion from './DrawerPortion';
-import UserInfoScreen from './src/screens/UserInfo/UserInfoScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Image } from 'react-native';
 
-const StackNav = ({navigation}:any)=>{
-  const Stack = createNativeStackNavigator();
+import HomeScreen from './src/screens/Home/HomeScreen';
+import GetStartedScreen from './src/screens/GetStarted/GetStartedScreen';
+import LoginScreen from './src/screens/Auth/LoginScreen';
+import Registration from './src/screens/Auth/Registration';
+import LinearBg from './src/screens/_components/LinearBg';
+import DrawerPortion from './DrawerPortion';
+import UserInfoScreen from './src/screens/UserInfo/UserInfoScreen';
+import AcedmicsScreen from './src/screens/Home/Acedmics/AcedmicsScreen';
+
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const BottomTabNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName='Home'   >
-    <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
-    <Stack.Screen name="Splash" component={Splash} options={{ headerShown: false }} />
-    <Stack.Screen name="GetStart" component={GetStartedScreen}  options={{ headerShown: false }} />
-    <Stack.Screen name="UserInfo" component={UserInfoScreen}  options={{ headerShown: false }} />
-    <Stack.Screen name="linearBg" component={LinearBg}  options={{ headerShown: false }} />
-  </Stack.Navigator>
-  )
-}
-
-const DrawerNav = ()=>{
-  const Drawer = createDrawerNavigator();
-
-return(
-  <Drawer.Navigator 
-  drawerContent={props=> <DrawerPortion{...props}/>}
-  screenOptions={{
-    headerShown:false,
-    headerTitleAlign:'center',
-    headerStyle:{
-      backgroundColor:'#5178C9',
-    },
-    headerTintColor:'white',
-   }} >
-    <Drawer.Screen name="Home" component={StackNav} />
-    {/* <Drawer.Screen name="Splash" component={Splash} /> */}
-    {/* <Drawer.Screen name="linearBg" component={LinearBg} /> */}
-  </Drawer.Navigator>
-)
-}
-
-const BottomNv = ()=>{
-  const Tab = createBottomTabNavigator();
-  return(
     <Tab.Navigator
-    screenOptions={{
-     tabBarLabelStyle:{
-      paddingBottom:3, fontSize:12, fontWeight:'bold'
-     },
-    }}
-    >
-    <Tab.Screen name="Home" component={HomeScreen}   options={{ headerShown: false,tabBarIcon:(tabnIfo)=>{
-      return(
-       <Image source={require('./src/assets/home.png')} style={{width:20,height:20,tintColor:tabnIfo.focused?'#5178C9':'black'
+      screenOptions={{
+        tabBarLabelStyle: {
+          display:'none',
+          fontSize: 12,
+          fontWeight: 'bold',
+        },
+        
+      }}>
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          headerShown: false,
+          tabBarIcon: (tabInfo) => (
+            <Image
+              source={require('./src/assets/home.png')}
+              style={{
+                width: 26,
+                height: 28,
+                tintColor: tabInfo.focused ? '#5178C9' : 'black',
+              }}
+              />
+            ),
+            // tabBarLabel: '',
+        }}
+      />
+      
+      <Tab.Screen
+        name="Progress"
+        component={UserInfoScreen}
+        options={{
+          headerShown: false,
+          tabBarIcon: (tabInfo) => (
+            <Image
+              source={require('./src/assets/progressImg.png')}
+              style={{
+                width: 26,
+                height: 28,
+                tintColor: tabInfo.focused ? '#5178C9' : 'black',
+              }}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={LinearBg}
+        options={{
+          headerShown: false,
+          tabBarIcon: (tabInfo) => (
+            <Image
+              source={require('./src/assets/profileImg.png')}
+              style={{
+                width: 26,
+                height: 28,
+                tintColor: tabInfo.focused ? '#5178C9' : 'black',
+              }}
+            />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+};
 
-       }} />
-      )
-    }}} />
-    <Tab.Screen name="Profile" component={LinearBg}  options={{ headerShown: false,tabBarIcon:(tabnIfo)=>{
-      return(
-       <Image source={require('./src/assets/profileImg.png')} style={{width:19,height:19,
-        tintColor:tabnIfo.focused?'#5178C9':'black'
-       }} />
-      )
-    } }} />
-    <Tab.Screen name="Progress" component={UserInfoScreen}  options={{ headerShown: false , tabBarIcon:(tabnIfo)=>{
-      return(
-       <Image source={require('./src/assets/progressImg.png')} style={{width:20,height:20,
-        tintColor:tabnIfo.focused?'#5178C9':'black'
-       }} />
-      )
-    } }} />
-  </Tab.Navigator>
-);
-}
-
+const StackNav = () => {
+  return (
+    <Stack.Navigator initialRouteName="Acedmics">
+      {/* <Stack.Screen name="linearBg" component={LinearBg} options={{ headerShown: false }} /> */}
+      <Stack.Screen name="Acedmics" component={AcedmicsScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Register" component={Registration} options={{ headerShown: false }} />
+      {/* <Stack.Screen name="GetStart" component={GetStartedScreen} options={{ headerShown: false }} /> */}
+      <Stack.Screen name="Home" component={BottomTabNavigator} options={{ headerShown: false }} />
+    </Stack.Navigator>
+  );
+};
 
 function App() {
   return (
     <NavigationContainer>
-     
-     <GestureHandlerRootView>
-     <BottomNv/>
-     </GestureHandlerRootView>
+      <GestureHandlerRootView>
+        <StackNav />
+      </GestureHandlerRootView>
     </NavigationContainer>
   );
 }

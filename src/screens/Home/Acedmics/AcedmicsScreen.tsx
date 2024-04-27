@@ -9,9 +9,9 @@ const UserInfoScreen = () => {
     <View style={{flex: 1}}>
       <View style={{backgroundColor: '#5178C9', height: 261}}>
         <View style={styles.ProfileContainer}>
-        <Image source={require('../../assets/arrowleftIcon1.png')} style={{width:17,height:25, tintColor:'white'}} />
+        <Image source={require('./../../../assets/icons/arrowleftIcon1.png')} style={{width:17,height:25, tintColor:'white'}} />
           <Text style={styles.ProfileText}>Profile</Text>
-          <Image source={require('../../assets/settingIcon.png')} style={{width:27,height:27, tintColor:'white'}} />
+          <Image source={require('./../../../assets/icons/settingIcon.png')} style={{width:27,height:27, tintColor:'white'}} />
           
         </View>
         {/* second portion */}
@@ -51,14 +51,15 @@ const UserInfoScreen = () => {
           // flex: 1,
         }}>
         <View style={{  gap:12, height:528}} >
-        <ClickBox  image={require('../../assets/icons/heart.png')} text="Whislist" />
+          <Text>colors</Text>
+        {/* <ClickBox  image={require('../../assets/icons/heart.png')} text="Whislist" />
         <ClickBox  image={require('../../assets/icons/download.png') } text="Download" />
         <ClickBox  image={require('../../assets/icons/call.png')}  text="Contact us"/>
         <ClickBox  image={require('../../assets/icons/about.png')}  text="About us"/>
         <ClickBox  image={require('../../assets/icons/download.png') } text="Save here"/>
         <ClickBox  image={require('../../assets/icons/download.png') } text="Save here"/>
         <ClickBox  image={require('../../assets/icons/call.png')}  text="Contact us"/>
-        <ClickBox  image={require('../../assets/icons/download.png') } text="Save here"/>
+        <ClickBox  image={require('../../assets/icons/download.png') } text="Save here"/> */}
         </View>
         <View style={{position:'absolute', bottom:0 }} >
         <LogoutBtn/>

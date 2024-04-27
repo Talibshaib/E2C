@@ -7,9 +7,30 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 
-export default function LoginScreen() {
+
+
+export default function LoginScreen({navigation}:any) {
+  const [password, setPassword] = useState("");
+const [passwordVerify, setPasswordVerify ] = useState(false);
+
+   function handelToRegister(){
+    navigation.navigate("Register")
+   }
+
+  
+
+function handelPassword(e){
+  const passwordVar = e.nativeEvent.text;
+   setPassword(passwordVar)
+   setPasswordVerify(false)
+   if(passwordVar.length>4){
+     setPasswordVerify(true)
+   }
+
+}
+  
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -34,6 +55,7 @@ export default function LoginScreen() {
             style={styles.input_bx}
             placeholderTextColor={'#909090'}
             placeholder="Password"
+            onChange={e=>{handelPassword(e)}}
           />
         </View>
         <View style={styles.forgot}>
@@ -43,7 +65,7 @@ export default function LoginScreen() {
           <TouchableOpacity style={styles.botton_bx}>
             <Text style={styles.botton_txt}>Login</Text>
           </TouchableOpacity>
-          <Text style={styles.signup}>
+          <Text style={styles.signup} onPress={handelToRegister} >
             Don't have an account? <Text style={styles.signup_tx}>Sign up</Text>
           </Text>
         </View>
