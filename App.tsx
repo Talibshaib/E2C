@@ -5,14 +5,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Image } from 'react-native';
 
-import HomeScreen from './src/screens/Home/HomeScreen';
-import GetStartedScreen from './src/screens/GetStarted/GetStartedScreen';
-import LoginScreen from './src/screens/Auth/LoginScreen';
-import Registration from './src/screens/Auth/Registration';
+import HomeScreen from './src/screens/home/HomeScreen';
+import GetStartedScreen from './src/screens/getStarted/GetStartedScreen';
+import LoginScreen from './src/screens/auth/LoginScreen';
+import Registration from './src/screens/auth/Registration';
 import LinearBg from './src/screens/_components/LinearBg';
-import DrawerPortion from './DrawerPortion';
-import UserInfoScreen from './src/screens/UserInfo/UserInfoScreen';
-import AcedmicsScreen from './src/screens/Home/Acedmics/AcedmicsScreen';
+import UserInfoScreen from './src/screens/userInfo/UserInfoScreen';
+import AcedmicsScreen from './src/screens/home/acedmics/AcedmicsScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -29,7 +28,7 @@ const BottomTabNavigator = () => {
         
       }}>
       <Tab.Screen
-        name="Home"
+        name="home"
         component={HomeScreen}
         options={{
           headerShown: false,
@@ -87,13 +86,13 @@ const BottomTabNavigator = () => {
 
 const StackNav = () => {
   return (
-    <Stack.Navigator initialRouteName="Acedmics">
-      {/* <Stack.Screen name="linearBg" component={LinearBg} options={{ headerShown: false }} /> */}
-      <Stack.Screen name="Acedmics" component={AcedmicsScreen} options={{ headerShown: false }} />
-      <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+    <Stack.Navigator initialRouteName="home">
+      <Stack.Screen name="linearBg" component={LinearBg} options={{ headerShown: false }} />
+      <Stack.Screen name="GetStart" component={GetStartedScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Register" component={Registration} options={{ headerShown: false }} />
-      {/* <Stack.Screen name="GetStart" component={GetStartedScreen} options={{ headerShown: false }} /> */}
-      <Stack.Screen name="Home" component={BottomTabNavigator} options={{ headerShown: false }} />
+      <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="home" component={BottomTabNavigator} options={{ headerShown: false }} />
+      <Stack.Screen name="Acedmics" component={AcedmicsScreen} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 };

@@ -1,43 +1,36 @@
 import {Button, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Image} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native';
 
 
-const UserInfoScreen = () => {
+const AcedmicsScreen = () => {
   return (
     <View style={{flex: 1}}>
       <View style={{backgroundColor: '#5178C9', height: 261}}>
         <View style={styles.ProfileContainer}>
-        <Image source={require('./../../../assets/icons/arrowleftIcon1.png')} style={{width:17,height:25, tintColor:'white'}} />
-          <Text style={styles.ProfileText}>Profile</Text>
-          <Image source={require('./../../../assets/icons/settingIcon.png')} style={{width:27,height:27, tintColor:'white'}} />
+        <Image source={require('../../../assets/arrowleftIcon1.png')} style={{width:17,height:25, tintColor:'white'}} />
+          
+          
           
         </View>
         {/* second portion */}
         <View style={styles.SecondContainer}>
-          <Image
-            source={require('../../assets/cardImg.png')}
-            style={{
-              width: 88,
-              backgroundColor: '#ffff',
-              height: 87,
-              borderRadius: 6,
-            }}
-            resizeMode="contain"
-          />
+          
           <View
             style={{
               flexDirection: 'column',
+              // backgroundColor:'red',
+              justifyContent:'flex-end',
               padding: 12,
               height: 118,
               gap: 12,
             }}>
             <View>
-              <Text style={styles.userName}>Jaswant Kumar</Text>
-              <Text style={styles.userSubDetail}>TIT main</Text>
+              <Text style={styles.userName}>Physics</Text>
+             
             </View>
-            <UserInfoBtn />
+           
           </View>
         </View>
       </View>
@@ -51,7 +44,6 @@ const UserInfoScreen = () => {
           // flex: 1,
         }}>
         <View style={{  gap:12, height:528}} >
-          <Text>colors</Text>
         {/* <ClickBox  image={require('../../assets/icons/heart.png')} text="Whislist" />
         <ClickBox  image={require('../../assets/icons/download.png') } text="Download" />
         <ClickBox  image={require('../../assets/icons/call.png')}  text="Contact us"/>
@@ -62,14 +54,14 @@ const UserInfoScreen = () => {
         <ClickBox  image={require('../../assets/icons/download.png') } text="Save here"/> */}
         </View>
         <View style={{position:'absolute', bottom:0 }} >
-        <LogoutBtn/>
+        {/* <LogoutBtn/> */}
         </View>
       </View>
     </View>
   );
 };
 
-export default UserInfoScreen;
+export default AcedmicsScreen;
 
 const styles = StyleSheet.create({
   ProfileContainer: {
@@ -144,7 +136,7 @@ export const ClickBox = ({image, text}:any) => {
         <Image source={image} />
       <Text style={{color:'black', fontWeight:'700'}}>{text}</Text>
       <View style={{ flex:1,alignItems:'flex-end' }} >
-        <Image source={require('../../assets/icons/greaterSymbol.png')} style={{width:20,height:20, opacity:0.6}} />
+        <Image source={require('../../../assets/icons/about.png')} style={{width:20,height:20, opacity:0.6}} />
       </View>
     </View>
   );

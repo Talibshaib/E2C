@@ -1,7 +1,7 @@
 import {Button, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Image} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native';
 
 
 const UserInfoScreen = () => {
