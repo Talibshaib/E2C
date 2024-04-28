@@ -18,6 +18,9 @@ const [passwordVerify, setPasswordVerify ] = useState(false);
    function handelToRegister(){
     navigation.navigate("Register")
    }
+   function handelToHomeScreen(){
+    navigation.navigate("home")
+   }
 
   
 
@@ -62,11 +65,11 @@ function handelPassword(e){
           <Text style={styles.forgot_txt}>Forgot Password?</Text>
         </View>
         <View style={styles.button}>
-          <TouchableOpacity style={styles.botton_bx}>
+          <TouchableOpacity style={styles.botton_bx} onPress={handelToHomeScreen}  >
             <Text style={styles.botton_txt}>Login</Text>
           </TouchableOpacity>
-          <Text style={styles.signup} onPress={handelToRegister} >
-            Don't have an account? <Text style={styles.signup_tx}>Sign up</Text>
+          <Text style={styles.signup}  >
+            Don't have an account? <Text style={styles.signup_tx} onPress={handelToRegister} >Sign up</Text>
           </Text>
         </View>
       </View>

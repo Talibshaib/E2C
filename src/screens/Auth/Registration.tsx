@@ -8,105 +8,105 @@ import {
   View,
 } from 'react-native';
 import React, { useState } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
 
 export default function Registration({navigation}:any) {
  
-  // const [name, setName] = useState("");
-  // const [nameVerify, setNameVerify] = useState(false);
-  // const [collegename, setCollegeName] = useState("");
-  // const [collegeVerify, setCollegeVerify] = useState(false);
-  // const [semester, setSemester] = useState("");
-  // const [semesterVerify, setSemesterVerify] = useState(false);
-  // const [userName, setUserName] = useState("");
-  // const [userNameVerify , setUserNameVerify] = useState(false);
-  // const [password, setPassword] = useState("");
-  // const [passwordVerify, setPasswordVerify ] = useState(false);
-  // const [conformPassword, setConformPassword] = useState("");
-  // const [conformPasswordVerify, setConformPasswordVerify ] = useState(false);
+  const [name, setName] = useState("");
+  const [nameVerify, setNameVerify] = useState(false);
+  const [collegename, setCollegeName] = useState("");
+  const [collegeVerify, setCollegeVerify] = useState(false);
+  const [semester, setSemester] = useState("");
+  const [semesterVerify, setSemesterVerify] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [userNameVerify , setUserNameVerify] = useState(false);
+  const [password, setPassword] = useState("");
+  const [passwordVerify, setPasswordVerify ] = useState(false);
+  const [conformPassword, setConformPassword] = useState("");
+  const [conformPasswordVerify, setConformPasswordVerify ] = useState(false);
 
   function handelHome() {
-    navigation.navigate('home')
+    navigation.navigate('Login')
     
   }
 
-//   function handelSubmit(){
-//     const userData = {
-//       name:name,
-//       collegename,
-//       semester,
-//       userName,
-//       password,
-//       conformPassword
-//   };
-//   axios.post("http://192.168.1.4/register",userData).then((res)=>{console.log(res.data);
-// }
-//   )
-//   .catch((e)=>{console.log(e)
-//  }
-//   )
+  function handelSubmit(){
+    const userData = {
+      name:name,
+      collegename,
+      semester,
+      userName,
+      password,
+      conformPassword
+  };
+  axios.post("http://192.168.1.4/register",userData).then((res)=>{console.log(res.data);
+}
+  )
+  .catch((e)=>{console.log(e)
+ }
+  )
 
 
-//   }
+  }
   
-//  function handelName(e){
-//  const nameVar = e.nativeEvent.text;
-//  setName(nameVar)
-//  setNameVerify(false)
-//  if(nameVar.length>1){
-//   setNameVerify(true)  
-//  }
+ function handelName(e){
+ const nameVar = e.nativeEvent.text;
+ setName(nameVar)
+ setNameVerify(false)
+ if(nameVar.length>1){
+  setNameVerify(true)  
+ }
   
-//  }
-// function handelCollege(e){
-//   const collegeVar = e.nativeEvent.text;
-//   setCollegeName(collegeVar)
-//   setCollegeVerify(false)
-//   if(collegeVar.length>3){
-//     setCollegeVerify(true)
-//   }
-// }
-// function handelSemester(e){
-//   const semesterVar = e.nativeEvent.text;
-//     setSemester(semesterVar)
-//     setSemesterVerify(false)
+ }
+function handelCollege(e){
+  const collegeVar = e.nativeEvent.text;
+  setCollegeName(collegeVar)
+  setCollegeVerify(false)
+  if(collegeVar.length>3){
+    setCollegeVerify(true)
+  }
+}
+function handelSemester(e){
+  const semesterVar = e.nativeEvent.text;
+    setSemester(semesterVar)
+    setSemesterVerify(false)
 
-//     // Check if semesterVar is not empty and is a single digit
-//     if(semesterVar.length === 1 && /^\d$/.test(semesterVar)){
-//         setSemesterVerify(true);
-//     } else {
-//         setSemesterVerify(false);
-//     }
-// }
-// function handleuserName(e){
-//   const usernameVar = e.nativeEvent.text;
-//   setUserName(usernameVar)
-//   setUserNameVerify(false)
-//   if(usernameVar.length>2){
-//     setUserNameVerify(true)
-//   }
-// }
+    // Check if semesterVar is not empty and is a single digit
+    if(semesterVar.length === 1 && /^\d$/.test(semesterVar)){
+        setSemesterVerify(true);
+    } else {
+        setSemesterVerify(false);
+    }
+}
+function handleuserName(e){
+  const usernameVar = e.nativeEvent.text;
+  setUserName(usernameVar)
+  setUserNameVerify(false)
+  if(usernameVar.length>2){
+    setUserNameVerify(true)
+  }
+}
 
-// function handelPassword(e){
-//    const passwordVar = e.nativeEvent.text;
-//     setPassword(passwordVar)
-//     setPasswordVerify(false)
-//     if(passwordVar.length>4){
-//       setPasswordVerify(true)
-//     }
+function handelPassword(e){
+   const passwordVar = e.nativeEvent.text;
+    setPassword(passwordVar)
+    setPasswordVerify(false)
+    if(passwordVar.length>4){
+      setPasswordVerify(true)
+    }
 
-// }
-// function handleConformPassword(e){
-//   const conformPasswordVar = e.nativeEvent.text;
-//   setConformPassword(conformPasswordVar)
-//   setConformPasswordVerify(false)
-//   if(conformPasswordVar!==password){
+}
+function handleConformPassword(e){
+  const conformPasswordVar = e.nativeEvent.text;
+  setConformPassword(conformPasswordVar)
+  setConformPasswordVerify(false)
+  if(conformPasswordVar!==password){
    
-//     return;
-//   }
-//  setConformPasswordVerify(true)
-// }
+    return;
+  }
+ setConformPasswordVerify(true)
+}
 
 
   return (
@@ -128,81 +128,83 @@ export default function Registration({navigation}:any) {
             style={styles.input_bx}
             placeholderTextColor={'#909090'}
             placeholder="Full Name"
-            // onChange={e=>{handelName(e)}}
+            onChange={e=>{handelName(e)}}
           />
-          {/* {
+          {
             name.length<1?null:nameVerify?null:
             <Text style={{
               color:'red'
             }} >
               name should be greater than 1 character
             </Text>
-          } */}
+          }
           <TextInput
             style={styles.input_bx}
             placeholderTextColor={'#909090'}
             placeholder="College Name"
-            // onChange={e=>{handelCollege(e)}}
+            onChange={e=>{handelCollege(e)}}
           />
-            {/* {
+            {
             collegename.length<1?null:collegeVerify?null:
             <Text style={{
               color:'red'
             }} >
               Enter a valid college name
             </Text>
-          } */}
+          }
           <TextInput
             style={styles.input_bx}
             placeholderTextColor={'#909090'}
             placeholder="Semester"
             keyboardType='numeric'
-            // maxLength={1}
-            // onChange={e=>{handelSemester(e)}}
+            maxLength={1}
+            onChange={e=>{handelSemester(e)}}
           />
           
           <TextInput
             style={styles.input_bx}
             placeholderTextColor={'#909090'}
             placeholder="Username"
-            // onChange={e=>{handleuserName(e)}}
+            onChange={e=>{handleuserName(e)}}
           />
-            {/* {
+            {
             userName.length<1?null:userNameVerify?null:
             <Text style={{
               color:'red'
             }} >
               Enter a valid username
             </Text>
-          } */}
+          }
           <TextInput
             style={styles.input_bx}
             placeholderTextColor={'#909090'}
             placeholder="Password"
-            // onChange={e=>{handelPassword(e)}}
+            secureTextEntry={true}
+            onChange={e=>{handelPassword(e)}}
           />
-            {/* {
+            {
             password.length<1?null:passwordVerify?null:
             <Text style={{
               color:'red'
             }} >
               Enter a  valid passord of 4 or more digit
             </Text>
-          } */}
+          }
              
           <TextInput
             style={styles.input_bx}
             placeholderTextColor={'#909090'}
             placeholder="Confirm Password"
-            // onChange={e=>{handleConformPassword(e)}}
+            secureTextEntry={true}
+            onChange={e=>{handleConformPassword(e)}}
           />
-          {/* {
+          {
             conformPassword.length<1?null:conformPasswordVerify?null:
             conformPasswordVerify === false &&
             <Text style={{ color: 'red' }}>
               Passwords do not match
             </Text>
-          } */}
+          }
         
         </View>
         <View style={styles.button}>

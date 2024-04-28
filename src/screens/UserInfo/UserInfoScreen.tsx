@@ -17,7 +17,7 @@ const UserInfoScreen = () => {
         {/* second portion */}
         <View style={styles.SecondContainer}>
           <Image
-            source={require('../../assets/cardImg.png')}
+            source={require('../../assets/profile.jpg')}
             style={{
               width: 88,
               backgroundColor: '#ffff',
@@ -48,17 +48,16 @@ const UserInfoScreen = () => {
           alignItems: 'center',
           justifyContent: 'center',
           gap: 17,
+          backgroundColor:'#E8E8E8'
           // flex: 1,
         }}>
-        <View style={{  gap:12, height:528}} >
+        <View style={{  gap:12, height:528,  justifyContent:'center'}} >
         <ClickBox  image={require('../../assets/icons/heart.png')} text="Whislist" />
         <ClickBox  image={require('../../assets/icons/download.png') } text="Download" />
+        <ClickBox  image={require('../../assets/messageIcon.png') } text="Inbox"/>
         <ClickBox  image={require('../../assets/icons/call.png')}  text="Contact us"/>
         <ClickBox  image={require('../../assets/icons/about.png')}  text="About us"/>
-        <ClickBox  image={require('../../assets/icons/download.png') } text="Save here"/>
-        <ClickBox  image={require('../../assets/icons/download.png') } text="Save here"/>
-        <ClickBox  image={require('../../assets/icons/call.png')}  text="Contact us"/>
-        <ClickBox  image={require('../../assets/icons/download.png') } text="Save here"/>
+       
         </View>
         <View style={{position:'absolute', bottom:0 }} >
         <LogoutBtn/>
@@ -108,16 +107,18 @@ export const UserInfoBtn = () => {
   return (
     <TouchableOpacity
       style={{
-        backgroundColor: '#ffff',
+        backgroundColor: '#5178C9',
         borderRadius: 6,
         alignItems: 'center',
         width: 96,
         height: 32,
         paddingHorizontal: 7,
         justifyContent: 'center',
+        borderColor:'white',
+        borderWidth:1
       }}
       activeOpacity={0.7}>
-      <Text style={{color: 'black', fontSize: 12, fontWeight: 'bold'}}>
+      <Text style={{color: 'white', fontSize: 12, fontWeight: 'bold'}}>
         Edit Profile
       </Text>
     </TouchableOpacity>

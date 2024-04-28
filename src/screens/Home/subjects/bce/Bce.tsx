@@ -6,12 +6,12 @@ import {TouchableOpacity} from 'react-native';
 
 
 
-const AcedmicsScreen = () => {
+const Bce = () => {
   return (
     <View style={{flex: 1}}>
       <View style={{backgroundColor: '#5178C9', height: 261}}>
         <View style={styles.ProfileContainer}>
-        <Image source={require('../../../assets/arrowleftIcon1.png')} style={{width:17,height:25, tintColor:'white'}} />
+        <Image source={require('../../../../assets/arrowleftIcon1.png')} style={{width:17,height:25, tintColor:'white'}} />
           
           
           
@@ -27,7 +27,7 @@ const AcedmicsScreen = () => {
               height: 198,
             }}>
             <View>
-              <Text style={styles.userName}>BT101-Engineering Chemistry</Text>
+              <Text style={styles.userName}>BT204-Basic Civil &Mechanic </Text>
              
             </View>
            
@@ -45,21 +45,12 @@ const AcedmicsScreen = () => {
         }}>
            <Text style={{ width:'90%', padding:12, fontWeight:'bold', color:'black',fontSize:16}} >All Chapters</Text>
         <View style={{  gap:12, height:528}} >
-        {/* <ClickBox  image={require('../../assets/icons/heart.png')} text="Whislist" />
-        <ClickBox  image={require('../../assets/icons/download.png') } text="Download" />
-        <ClickBox  image={require('../../assets/icons/call.png')}  text="Contact us"/>
-        <ClickBox  image={require('../../assets/icons/about.png')}  text="About us"/>
-        <ClickBox  image={require('../../assets/icons/download.png') } text="Save here"/>
-        <ClickBox  image={require('../../assets/icons/download.png') } text="Save here"/>
-        <ClickBox  image={require('../../assets/icons/call.png')}  text="Contact us"/>
-        <ClickBox  image={require('../../assets/icons/download.png') } text="Save here"/> */}
-         <ClickBoxSub  text=" Unit 1-Water-Analysis ,treatment.........."/>
-         <ClickBoxSub  text=" Unit 2-Boiler Problem & Softening ... "/>
-         <ClickBoxSub  text=" Unit 3-Lubricants and Lubrication"/>
-         <ClickBoxSub  text=" Unit 4-Polymer & Polymerization"/>
-         <ClickBoxSub  text=" Unit 5-Phase equilibrium& Corrosion"/>
-         <ClickBoxSub  text="Unit 6-Spectroscopic technique & ap."/>
-         <ClickBoxSub  text="Unit 7-Periodic Properties"/>
+        
+         <ClickBoxSub  text=" Unit 1-Buliding Materials&Construct.."/>
+         <ClickBoxSub  text="Unit 2-Surveying & Positioning "/>
+         <ClickBoxSub  text=" Unit 3-Mapping & Sensing"/>
+         <ClickBoxSub  text=" Unit 4- Force &Equilibrium"/>
+         <ClickBoxSub  text=" Unit 5-Center of Gravity & MOI"/>
         </View>
         <View style={{position:'absolute', bottom:0 }} >
         {/* <LogoutBtn/> */}
@@ -69,7 +60,7 @@ const AcedmicsScreen = () => {
   );
 };
 
-export default AcedmicsScreen;
+export default Bce;
 
 const styles = StyleSheet.create({
   ProfileContainer: {
@@ -138,7 +129,7 @@ export const ClickBoxSub = ({ text}:any) => {
       }}>
       <Text style={{color:'black', fontWeight:'700'}}>{text}</Text>
       <View style={{ flex:1,alignItems:'flex-end' }} >
-        <Image source={require('../../../assets/icons/greaterSymbol.png')} style={{width:20,height:20, opacity:0.6}} />
+        <Image source={require('../../../../assets/icons/greaterSymbol.png')} style={{width:20,height:20, opacity:0.6}} />
       </View>
     </View>
   );
